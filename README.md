@@ -15,7 +15,7 @@
 2. You add your own SDK (you can dump one using [Dumper 7](https://github.com/Encryqed/Dumper-7)
 3. Add the needed Offsets and Index's (you can get them using IDA or reboot logs)
 5. Build the project using Visual Studio 2022
-6. Run the server using [FN.AutoHost](https://github.com/Twin1dev/FN.AutoHost) made by Twin1dev.
+6. Run the server using [FN.AutoHost](https://github.com/Twin1dev/FN.AutoHost) made by Twin1dev or Another Hoster (you can use UUU injector).
    
 ## Contributing
 
