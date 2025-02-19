@@ -7,9 +7,9 @@ using namespace std;
 using namespace SDK;
 
 
-static UNetDriver* (*CreateNetDriver)(void*, void*, FName) = decltype(CreateNetDriver)(InSDKUtils::GetImageBase() + 0x4573990);
-static bool (*InitListen)(void*, void*, FURL&, bool, FString&) = decltype(InitListen)(InSDKUtils::GetImageBase() + 0xD44C40);
-static void (*SetWorld)(void*, void*) = decltype(SetWorld)(InSDKUtils::GetImageBase() + 0x42C2B20);
+static UNetDriver* (*CreateNetDriver)(void*, void*, FName) = decltype(CreateNetDriver)(InSDKUtils::GetImageBase() + OFFSET);
+static bool (*InitListen)(void*, void*, FURL&, bool, FString&) = decltype(InitListen)(InSDKUtils::GetImageBase() + OFFSET);
+static void (*SetWorld)(void*, void*) = decltype(SetWorld)(InSDKUtils::GetImageBase() + OFFSET);
 
 void Log(string msg)
 {
