@@ -20,13 +20,13 @@ inline bool ReadyToStartMatch(AFortGameModeAthena* GameMode)
     {
         Initialized = true;
 
-        UFortPlaylistAthena* Playlist = UObject::FindObjectContain<UFortPlaylistAthena>("Playlist_DefaultSolo");
+        UFortPlaylistAthena* Playlist = UObject::FindObject<UFortPlaylistAthena>("Playlist_DefaultSolo.Playlist_DefaultSolo");
 
         GameState->CurrentPlaylistInfo.BasePlaylist = Playlist;
         GameState->CurrentPlaylistInfo.OverridePlaylist = Playlist;
         GameState->CurrentPlaylistInfo.PlaylistReplicationKey++;
         GameState->CurrentPlaylistId = Playlist->PlaylistId;
-        GameState->CurrentPlaylistInfo.MarkArrayDirty();
+        GameState->CurrentPlaylistInfo.MarkArrayDirty(); // make sure you add this to your sdk
         
         AFortGameSessionDedicatedAthena* GameSession = SpawnActor<AFortGameSessionDedicatedAthena>();
 
