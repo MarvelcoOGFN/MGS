@@ -13,7 +13,7 @@ static void (*SetWorld)(void*, void*) = decltype(SetWorld)(InSDKUtils::GetImageB
 
 void Log(string msg)
 {
-	cout << "[Ero GS]: " << msg << endl;
+	cout << "[MGS]: " << msg << endl;
 }
 
 void HookVTable(void* Base, int Idx, void* Detour, void** OG)
