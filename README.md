@@ -1,6 +1,6 @@
  ![LOGO](https://github.com/user-attachments/assets/0367c86e-5904-473c-8a01-3f01259f5323)
 
-### MGS is a "universal" Chapter 2 gameserver made for people who would like to start their own gs but are not skilled enough to start from scratch
+### MGS is a "Universal" Chapter 2 gameserver made for people who would like to start their own gs but are not skilled enough to start from scratch
 
 ### This gs has been tested on s11,s12,s13,s15 it can be used for all the chapter 2 seasons (might work on ch1)
 
