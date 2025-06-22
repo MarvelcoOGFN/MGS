@@ -2,8 +2,7 @@
 
 ### MGS is a "universal" Chapter 2 gameserver made for people who would like to start their own gs but are not skilled enough to start from scratch
 
-### This gs has been tested on s11,s12,s13,s15 it can be used for all the chapter 2 seasons
-(It might need minor modifications depending on the SDK you use and if the season has a unique way to work)
+### This gs has been tested on s11,s12,s13,s15 it can be used for all the chapter 2 seasons (might work on ch1)
 
 ## Features
 
@@ -21,6 +20,6 @@
 
 Contributions are welcome! Feel free to create pull requests or report issues on the GitHub repository.
 
-## Note: I do not condone reversing Fortnite , use this at your own risk (I am not responsible for anything that can occur)
+## Note: I do not condone reversing Fortnite , use this at your own risk
 
 # No support will be offered for MGS
