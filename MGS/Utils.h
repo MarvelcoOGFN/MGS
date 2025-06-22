@@ -11,6 +11,10 @@ static UNetDriver* (*CreateNetDriver)(void*, void*, FName) = decltype(CreateNetD
 static bool (*InitListen)(void*, void*, FURL&, bool, FString&) = decltype(InitListen)(InSDKUtils::GetImageBase() + OFFSET);
 static void (*SetWorld)(void*, void*) = decltype(SetWorld)(InSDKUtils::GetImageBase() + OFFSET);
 
+uint8 NextIdx = 3;
+int CurrentPlayersOnTeam = 0;
+int MaxPlayersOnTeam = 1;
+
 void Log(string msg)
 {
 	cout << "[MGS]: " << msg << endl;

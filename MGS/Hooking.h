@@ -40,6 +40,8 @@ namespace Misc {
 		MH_CreateHook((LPVOID)(ImageBase + OFFSET), False, nullptr);// validation / kick
 		MH_CreateHook((LPVOID)(ImageBase + OFFSET), False, nullptr);// change gamesession id
 		MH_CreateHook((LPVOID)(ImageBase + OFFSET), DispatchRequest, (LPVOID*)&DispatchRequestOG);
+		MH_CreateHook((LPVOID)(ImageBase + OFFSET), AActorGetNetMode, nullptr);
+		MH_CreateHook((LPVOID)(ImageBase + OFFSET), WorldGetNetMode, nullptr);
 
 	}
 }

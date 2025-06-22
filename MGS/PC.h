@@ -12,7 +12,7 @@ inline void ServerLoadingScreenDropped(AFortPlayerControllerAthena* PC)
 	PlayerState->OnRep_CharacterData();
 
 
-	PlayerState->SquadId = PlayerState->TeamIndex - 2;
+	PlayerState->SquadId = PlayerState->TeamIndex - 3;
 
 	PlayerState->OnRep_SquadId();
 	PlayerState->OnRep_TeamIndex(0);
