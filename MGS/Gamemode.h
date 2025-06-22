@@ -4,7 +4,6 @@
 inline bool (*ReadyToStartMatchOG)(AFortGameModeAthena* GameMode);
 inline bool ReadyToStartMatch(AFortGameModeAthena* GameMode)
 {
-    ReadyToStartMatchOG(GameMode);
 
     auto GameState = (AFortGameStateAthena*)GameMode->GameState;
 
@@ -30,11 +29,23 @@ inline bool ReadyToStartMatch(AFortGameModeAthena* GameMode)
         
         AFortGameSessionDedicatedAthena* GameSession = SpawnActor<AFortGameSessionDedicatedAthena>();
 
+        //not proper
         GameSession->SessionName = UKismetStringLibrary::Conv_StringToName(FString(L"MGS"));
         GameSession->MaxPlayers = 100;
         GameMode->GameSession = GameSession;
         GameMode->FortGameSession = GameSession;
         GameMode->CurrentPlaylistId = Playlist->PlaylistId;
+
+    	NextIdx = Playlist->DefaultFirstTeam;
+		MaxPlayersOnTeam = Playlist->MaxSquadSize;
+        
+	   if (MaxPlayersOnTeam > 1)
+	   {
+		  GameMode->bDBNOEnabled = true;
+		  GameState->bDBNOEnabledForGameMode = true;
+		  GameState->bDBNODeathEnabled = true;
+		  GameMode->bAllowSpectateAfterDeath = true;
+	   }
     }
 
     if (!GameState->MapInfo)
@@ -94,8 +105,27 @@ inline void DispatchRequest(__int64 a1, unsigned __int64* a2, int a3)
     return DispatchRequestOG(a1, a2, 3);
 }
 
+__int64 AActorGetNetMode(AActor* a1)
+{
+    return 1;
+}
+
+__int64 WorldGetNetMode(UWorld* a1)
+{
+    return 1;
+}
+
 inline __int64 PickTeam(__int64 a1, unsigned __int8 a2, __int64 a3)
 {
-    return 3;
+    uint8 Ret = NextIdx;
+	CurrentPlayersOnTeam++;
+
+	if (CurrentPlayersOnTeam == MaxPlayersOnTeam)
+	{
+		NextIdx++;
+		CurrentPlayersOnTeam = 0;
+	}
+    
+	return Ret;
 };
 
